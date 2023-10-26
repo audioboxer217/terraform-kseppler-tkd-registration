@@ -17,3 +17,13 @@ output "badges_bucket_name" {
   description = "The name of the Badges S3 Bucket."
   value       = aws_s3_bucket.badges_bucket.id
 }
+
+output "domain_name_servers" {
+  description = "The list of name servers for the domain."
+  value       = aws_route53_zone.main.name_servers
+}
+
+output "certificate_arn" {
+  description = "The ARN for the domain's certificate."
+  value       = aws_acm_certificate_validation.main.certificate_arn
+}
