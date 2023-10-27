@@ -57,7 +57,6 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_badges_bucket_name"></a> [badges\_bucket\_name](#output\_badges\_bucket\_name) | The name of the Badges S3 Bucket. |
-| <a name="output_certificate_arn"></a> [certificate\_arn](#output\_certificate\_arn) | The ARN for the domain's certificate. |
 | <a name="output_config_bucket_name"></a> [config\_bucket\_name](#output\_config\_bucket\_name) | The name of the Config S3 Bucket. |
 | <a name="output_domain_name_servers"></a> [domain\_name\_servers](#output\_domain\_name\_servers) | The list of name servers for the domain. |
 | <a name="output_processing_queue_url"></a> [processing\_queue\_url](#output\_processing\_queue\_url) | The URL for the Processing SQS Queue. |
