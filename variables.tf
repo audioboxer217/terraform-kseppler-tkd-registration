@@ -72,7 +72,7 @@ variable "config_bucket_prefix" {
 variable "public_media_bucket_prefix" {
   type        = string
   description = "The prefix to use for bucket that will hold the public media."
-  default     = "tkd-reg-config"
+  default     = "tkd-reg-public-media"
 }
 
 variable "domain_name" {

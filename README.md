@@ -55,7 +55,7 @@ No modules.
 | <a name="input_profile_pics_bucket_name"></a> [profile\_pics\_bucket\_name](#input\_profile\_pics\_bucket\_name) | The name to use for bucket that will hold the Profile Pics (Overrides `profile_pics_bucket_prefix` if provided). | `string` | `""` | no |
 | <a name="input_profile_pics_bucket_prefix"></a> [profile\_pics\_bucket\_prefix](#input\_profile\_pics\_bucket\_prefix) | The prefix to use for bucket that will hold the Profile Pics. | `string` | `"tkd-reg-profile-pics"` | no |
 | <a name="input_public_media_bucket_name"></a> [public\_media\_bucket\_name](#input\_public\_media\_bucket\_name) | The name to use for bucket that will hold the public media (Overrides `public_media_bucket_prefix` if provided). | `string` | `""` | no |
-| <a name="input_public_media_bucket_prefix"></a> [public\_media\_bucket\_prefix](#input\_public\_media\_bucket\_prefix) | The prefix to use for bucket that will hold the public media. | `string` | `"tkd-reg-config"` | no |
+| <a name="input_public_media_bucket_prefix"></a> [public\_media\_bucket\_prefix](#input\_public\_media\_bucket\_prefix) | The prefix to use for bucket that will hold the public media. | `string` | `"tkd-reg-public-media"` | no |
 | <a name="input_registration_table_name"></a> [registration\_table\_name](#input\_registration\_table\_name) | The name to use for 'registrations' DynamoDB Table. | `string` | n/a | yes |
 
 ## Outputs
