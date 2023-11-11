@@ -114,6 +114,15 @@ resource "aws_s3_bucket" "config_bucket" {
   tags_all            = {}
 }
 
+resource "aws_s3_bucket" "public_media_bucket" {
+  bucket              = var.public_media_bucket_name == "" ? null : var.public_media_bucket_name
+  bucket_prefix       = var.public_media_bucket_name != "" ? null : var.public_media_bucket_prefix
+  force_destroy       = null
+  object_lock_enabled = false
+  tags                = {}
+  tags_all            = {}
+}
+
 resource "aws_route53_zone" "main" {
   name = var.domain_name
 }
