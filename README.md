@@ -68,4 +68,5 @@ No modules.
 | <a name="output_domain_zone_id"></a> [domain\_zone\_id](#output\_domain\_zone\_id) | The Zone ID for the domain |
 | <a name="output_processing_queue_url"></a> [processing\_queue\_url](#output\_processing\_queue\_url) | The URL for the Processing SQS Queue. |
 | <a name="output_profile_pics_bucket_name"></a> [profile\_pics\_bucket\_name](#output\_profile\_pics\_bucket\_name) | The name of the Profile Pics S3 Bucket. |
+| <a name="output_public_media_bucket_name"></a> [public\_media\_bucket\_name](#output\_public\_media\_bucket\_name) | The name of the Public Media S3 Bucket. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
