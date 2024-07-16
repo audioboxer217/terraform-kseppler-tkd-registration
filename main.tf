@@ -92,12 +92,26 @@ resource "aws_s3_bucket" "profile-pics_bucket" {
   tags                = var.common_tags
 }
 
+resource "aws_s3_bucket_versioning" "profile-pics_bucket" {
+  bucket = aws_s3_bucket.profile-pics_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
 resource "aws_s3_bucket" "badges_bucket" {
   bucket              = var.badges_bucket_name == "" ? null : var.badges_bucket_name
   bucket_prefix       = var.badges_bucket_name != "" ? null : var.badges_bucket_prefix
   force_destroy       = null
   object_lock_enabled = false
   tags                = var.common_tags
+}
+
+resource "aws_s3_bucket_versioning" "badges_bucket" {
+  bucket = aws_s3_bucket.badges_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 resource "aws_s3_bucket" "config_bucket" {
@@ -108,12 +122,26 @@ resource "aws_s3_bucket" "config_bucket" {
   tags                = var.common_tags
 }
 
+resource "aws_s3_bucket_versioning" "config_bucket" {
+  bucket = aws_s3_bucket.config_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
 resource "aws_s3_bucket" "public_media_bucket" {
   bucket              = var.public_media_bucket_name == "" ? null : var.public_media_bucket_name
   bucket_prefix       = var.public_media_bucket_name != "" ? null : var.public_media_bucket_prefix
   force_destroy       = null
   object_lock_enabled = false
   tags                = var.common_tags
+}
+
+resource "aws_s3_bucket_versioning" "public_media_bucket" {
+  bucket = aws_s3_bucket.public_media_bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 resource "aws_s3_bucket_public_access_block" "public_media_bucket" {
