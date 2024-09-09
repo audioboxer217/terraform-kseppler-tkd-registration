@@ -79,8 +79,3 @@ variable "domain_name" {
   type        = string
   description = "The domain to use for this site."
 }
-
-variable "common_tags" {
-  type        = map(any)
-  description = "A map of tags to add to all resources that support tagging."
-}
