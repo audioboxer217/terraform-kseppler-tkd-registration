@@ -1,3 +1,4 @@
+# General Inputs
 variable "aws_account_number" {
   type        = string
   description = "The AWS Account where the resources will be created (uses 'current' data source when not provided)."
@@ -10,6 +11,85 @@ variable "aws_region" {
   default     = ""
 }
 
+# Competition Details
+variable "domain_name" {
+  type        = string
+  description = "The domain to use for this site."
+}
+
+variable "email_send_server" {
+  type        = string
+  description = "The email server to send emails from."
+}
+
+variable "email_send_port" {
+  type        = string
+  description = "The port for the email server to send emails from."
+}
+
+variable "email_send_address" {
+  type        = string
+  description = "The email address to use to send emails from."
+}
+
+variable "email_send_password" {
+  type        = string
+  sensitive   = true
+  description = "The password for the 'email_send_address'."
+}
+
+variable "competition_name" {
+  type        = string
+  description = "The name of the competition."
+}
+
+variable "competition_year" {
+  type        = string
+  description = "The year of the competition."
+}
+
+variable "early_reg_date" {
+  type        = string
+  description = "The date when Early Registration closes."
+}
+
+variable "reg_close_date" {
+  type        = string
+  description = "The date when Final Registration closes."
+}
+variable "contact_email" {
+  type        = string
+  description = "The email to give to users as a contact."
+}
+variable "admin_email" {
+  type        = string
+  description = "The email to use for sending admin-related items."
+}
+
+variable "visitor_info_url" {
+  type        = string
+  description = "URL to use for the visitor information link."
+}
+
+variable "visitor_info_text" {
+  type        = string
+  description = "Text to use for the visitor information link."
+}
+
+# API Details
+variable "maps_api_key" {
+  type        = string
+  sensitive   = true
+  description = "The API Key for Google Maps."
+}
+
+variable "stripe_api_key" {
+  type        = string
+  sensitive   = true
+  description = "The API Key for Stripe."
+}
+
+# AWS Resource Inputs
 variable "processing_queue_name" {
   type        = string
   description = "The name to use for the 'processing' SQS Queue."
@@ -73,9 +153,4 @@ variable "public_media_bucket_prefix" {
   type        = string
   description = "The prefix to use for bucket that will hold the public media."
   default     = "tkd-reg-public-media"
-}
-
-variable "domain_name" {
-  type        = string
-  description = "The domain to use for this site."
 }
