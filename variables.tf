@@ -11,6 +11,12 @@ variable "aws_region" {
   default     = ""
 }
 
+variable "TFC_WORKSPACE_NAME" {
+  type        = string
+  description = "The name of the workspace in Terraform Cloud where this is managed."
+  default     = ""
+}
+
 # Competition Details
 variable "domain_name" {
   type        = string
@@ -25,6 +31,7 @@ variable "email_send_server" {
 variable "email_send_port" {
   type        = string
   description = "The port for the email server to send emails from."
+  default     = "465"
 }
 
 variable "email_send_address" {
