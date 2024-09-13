@@ -10,10 +10,10 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
+  test:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    environment: production
+    environment: Test
 
     defaults:
       run:
@@ -24,11 +24,11 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v3
+      uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: arn:aws:iam::799879571353:role/GitHub_Actions
+        role-to-assume: ${{ vars.AWS_ROLE_ARN }}
         role-session-name: TerraformTest
-        aws-region: us-east-1
+        aws-region: ${{ vars.AWS_DEFAULT_REGION }}
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3.1.2
