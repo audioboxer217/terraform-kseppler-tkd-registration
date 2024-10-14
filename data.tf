@@ -43,20 +43,3 @@ data "aws_iam_policy_document" "failed_registrations_sqs_policy" {
     }
   }
 }
-
-data "aws_iam_policy_document" "allow_public_access" {
-  statement {
-    principals {
-      type        = "*"
-      identifiers = ["*"]
-    }
-
-    actions = [
-      "s3:GetObject",
-    ]
-
-    resources = [
-      "${aws_s3_bucket.public_media_bucket.arn}/*",
-    ]
-  }
-}
