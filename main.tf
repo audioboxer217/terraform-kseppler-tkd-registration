@@ -48,7 +48,7 @@ resource "aws_sqs_queue" "failed_registrations_queue" {
 resource "aws_dynamodb_table" "registrations_table" {
   billing_mode                = "PAY_PER_REQUEST"
   deletion_protection_enabled = false
-  hash_key                    = "full_name"
+  hash_key                    = "pk"
   name                        = var.registration_table_name
   range_key                   = null
   read_capacity               = 0
@@ -62,7 +62,7 @@ resource "aws_dynamodb_table" "registrations_table" {
   tags_all                    = {}
   write_capacity              = 0
   attribute {
-    name = "full_name"
+    name = "pk"
     type = "S"
   }
   attribute {
