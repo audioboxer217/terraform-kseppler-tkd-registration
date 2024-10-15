@@ -47,6 +47,7 @@ No modules.
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region where the resources will be created (uses 'current' data source when not provided). | `string` | `""` | no |
 | <a name="input_badges_bucket_name"></a> [badges\_bucket\_name](#input\_badges\_bucket\_name) | The name to use for bucket that will hold the Badges (Overrides `badges_bucket_prefix` if provided). | `string` | `""` | no |
 | <a name="input_badges_bucket_prefix"></a> [badges\_bucket\_prefix](#input\_badges\_bucket\_prefix) | The prefix to use for bucket that will hold the Badges. | `string` | `"tkd-reg-badges"` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | A map of tags to add to all resources that support tagging. | `map(any)` | n/a | yes |
 | <a name="input_config_bucket_name"></a> [config\_bucket\_name](#input\_config\_bucket\_name) | The name to use for bucket that will hold the Configs (Overrides `config_bucket_prefix` if provided). | `string` | `""` | no |
 | <a name="input_config_bucket_prefix"></a> [config\_bucket\_prefix](#input\_config\_bucket\_prefix) | The prefix to use for bucket that will hold the Configs. | `string` | `"tkd-reg-config"` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | The domain to use for this site. | `string` | n/a | yes |
