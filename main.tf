@@ -84,6 +84,47 @@ resource "aws_dynamodb_table" "registrations_table" {
   }
 }
 
+resource "aws_dynamodb_table" "auth_table" {
+  billing_mode                = "PAY_PER_REQUEST"
+  deletion_protection_enabled = false
+  hash_key                    = "id"
+  name                        = var.auth_table_name
+  range_key                   = null
+  read_capacity               = 0
+  restore_date_time           = null
+  restore_source_name         = null
+  restore_to_latest_time      = null
+  stream_enabled              = false
+  stream_view_type            = null
+  table_class                 = "STANDARD"
+  tags                        = local.common_tags
+  write_capacity              = 0
+  attribute {
+    name = "id"
+    type = "S"
+  }
+  attribute {
+    name = "email"
+    type = "S"
+  }
+  global_secondary_index {
+    hash_key           = "email"
+    name               = "email-index"
+    non_key_attributes = []
+    projection_type    = "ALL"
+    range_key          = null
+    read_capacity      = 0
+    write_capacity     = 0
+  }
+  point_in_time_recovery {
+    enabled = true
+  }
+  ttl {
+    attribute_name = ""
+    enabled        = false
+  }
+}
+
 resource "aws_s3_bucket" "profile-pics_bucket" {
   bucket              = var.profile_pics_bucket_name == "" ? null : var.profile_pics_bucket_name
   bucket_prefix       = var.profile_pics_bucket_name != "" ? null : var.profile_pics_bucket_prefix
@@ -170,7 +211,8 @@ resource "aws_s3_object" "frontend_json" {
     CONFIG_BUCKET       = aws_s3_bucket.config_bucket.id
     PUBLIC_MEDIA_BUCKET = aws_s3_bucket.public_media_bucket.id
     SQS_QUEUE_URL       = aws_sqs_queue.processing_queue.url
-    DB_TABLE            = var.registration_table_name
+    REG_DB_TABLE        = var.registration_table_name
+    AUTH_DB_TABLE       = var.auth_table_name
     VISITOR_INFO_URL    = var.visitor_info_url
     VISITOR_INFO_TEXT   = var.visitor_info_text
   }))
