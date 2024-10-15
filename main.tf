@@ -123,6 +123,20 @@ resource "aws_s3_bucket" "public_media_bucket" {
   tags_all            = {}
 }
 
+resource "aws_s3_bucket_public_access_block" "public_media_bucket" {
+  bucket = aws_s3_bucket.public_media_bucket.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+resource "aws_s3_bucket_policy" "allow_public_access" {
+  bucket = aws_s3_bucket.public_media_bucket.id
+  policy = data.aws_iam_policy_document.allow_public_access.json
+}
+
 resource "aws_route53_zone" "main" {
   name = var.domain_name
 }
