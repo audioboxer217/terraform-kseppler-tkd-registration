@@ -28,6 +28,7 @@ No modules.
 | [aws_s3_bucket.badges_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket.config_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket.profile-pics_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
+| [aws_s3_bucket.public_media_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_sqs_queue.failed_registrations_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 | [aws_sqs_queue.processing_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
@@ -50,6 +51,8 @@ No modules.
 | <a name="input_processing_queue_name"></a> [processing\_queue\_name](#input\_processing\_queue\_name) | The name to use for the 'processing' SQS Queue. | `string` | `"processing"` | no |
 | <a name="input_profile_pics_bucket_name"></a> [profile\_pics\_bucket\_name](#input\_profile\_pics\_bucket\_name) | The name to use for bucket that will hold the Profile Pics (Overrides `profile_pics_bucket_prefix` if provided). | `string` | `""` | no |
 | <a name="input_profile_pics_bucket_prefix"></a> [profile\_pics\_bucket\_prefix](#input\_profile\_pics\_bucket\_prefix) | The prefix to use for bucket that will hold the Profile Pics. | `string` | `"tkd-reg-profile-pics"` | no |
+| <a name="input_public_media_bucket_name"></a> [public\_media\_bucket\_name](#input\_public\_media\_bucket\_name) | The name to use for bucket that will hold the public media (Overrides `public_media_bucket_prefix` if provided). | `string` | `""` | no |
+| <a name="input_public_media_bucket_prefix"></a> [public\_media\_bucket\_prefix](#input\_public\_media\_bucket\_prefix) | The prefix to use for bucket that will hold the public media. | `string` | `"tkd-reg-config"` | no |
 | <a name="input_registration_table_name"></a> [registration\_table\_name](#input\_registration\_table\_name) | The name to use for 'registrations' DynamoDB Table. | `string` | n/a | yes |
 
 ## Outputs
