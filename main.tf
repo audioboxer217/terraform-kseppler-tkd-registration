@@ -18,7 +18,7 @@ resource "aws_sqs_queue" "processing_queue" {
     maxReceiveCount     = 10
   })
   sqs_managed_sse_enabled    = true
-  tags                       = var.common_tags
+  tags                       = local.common_tags
   visibility_timeout_seconds = 600
 }
 
@@ -39,7 +39,7 @@ resource "aws_sqs_queue" "failed_registrations_queue" {
   redrive_allow_policy              = null
   redrive_policy                    = null
   sqs_managed_sse_enabled           = true
-  tags                              = var.common_tags
+  tags                              = local.common_tags
   visibility_timeout_seconds        = 30
 }
 
@@ -56,7 +56,7 @@ resource "aws_dynamodb_table" "registrations_table" {
   stream_enabled              = false
   stream_view_type            = null
   table_class                 = "STANDARD"
-  tags                        = var.common_tags
+  tags                        = local.common_tags
   write_capacity              = 0
   attribute {
     name = "pk"
@@ -89,7 +89,7 @@ resource "aws_s3_bucket" "profile-pics_bucket" {
   bucket_prefix       = var.profile_pics_bucket_name != "" ? null : var.profile_pics_bucket_prefix
   force_destroy       = null
   object_lock_enabled = false
-  tags                = var.common_tags
+  tags                = local.common_tags
 }
 
 resource "aws_s3_bucket_versioning" "profile-pics_bucket" {
@@ -104,7 +104,7 @@ resource "aws_s3_bucket" "badges_bucket" {
   bucket_prefix       = var.badges_bucket_name != "" ? null : var.badges_bucket_prefix
   force_destroy       = null
   object_lock_enabled = false
-  tags                = var.common_tags
+  tags                = local.common_tags
 }
 
 resource "aws_s3_bucket_versioning" "badges_bucket" {
@@ -119,7 +119,7 @@ resource "aws_s3_bucket" "config_bucket" {
   bucket_prefix       = var.config_bucket_name != "" ? null : var.config_bucket_prefix
   force_destroy       = null
   object_lock_enabled = false
-  tags                = var.common_tags
+  tags                = local.common_tags
 }
 
 resource "aws_s3_bucket_versioning" "config_bucket" {
@@ -134,7 +134,7 @@ resource "aws_s3_bucket" "public_media_bucket" {
   bucket_prefix       = var.public_media_bucket_name != "" ? null : var.public_media_bucket_prefix
   force_destroy       = null
   object_lock_enabled = false
-  tags                = var.common_tags
+  tags                = local.common_tags
 }
 
 resource "aws_s3_bucket_versioning" "public_media_bucket" {
@@ -160,7 +160,7 @@ resource "aws_s3_bucket_policy" "allow_public_access" {
 
 resource "aws_route53_zone" "main" {
   name = var.domain_name
-  tags = var.common_tags
+  tags = local.common_tags
 }
 
 resource "aws_acm_certificate" "main" {
@@ -171,7 +171,7 @@ resource "aws_acm_certificate" "main" {
   options {
     certificate_transparency_logging_preference = "ENABLED"
   }
-  tags = var.common_tags
+  tags = local.common_tags
 }
 
 resource "aws_route53_record" "validation" {
