@@ -3,6 +3,10 @@ variables {
   domain_name                     = "test.reg.com"
   processing_queue_name           = "test_processing"
   failed_registrations_queue_name = "test_failed_registrations"
+  common_tags = {
+    "TF_Workspace" = "test_ws"
+    "Terraform"    = "true"
+  }
 }
 
 run "validate_route53" {

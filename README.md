@@ -23,7 +23,10 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_acm_certificate.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate) | resource |
+| [aws_acm_certificate_validation.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation) | resource |
 | [aws_dynamodb_table.registrations_table](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
+| [aws_route53_record.validation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_zone.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone) | resource |
 | [aws_s3_bucket.badges_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket.config_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
@@ -47,6 +50,7 @@ No modules.
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region where the resources will be created (uses 'current' data source when not provided). | `string` | `""` | no |
 | <a name="input_badges_bucket_name"></a> [badges\_bucket\_name](#input\_badges\_bucket\_name) | The name to use for bucket that will hold the Badges (Overrides `badges_bucket_prefix` if provided). | `string` | `""` | no |
 | <a name="input_badges_bucket_prefix"></a> [badges\_bucket\_prefix](#input\_badges\_bucket\_prefix) | The prefix to use for bucket that will hold the Badges. | `string` | `"tkd-reg-badges"` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | A map of tags to add to all resources that support tagging. | `map(any)` | n/a | yes |
 | <a name="input_config_bucket_name"></a> [config\_bucket\_name](#input\_config\_bucket\_name) | The name to use for bucket that will hold the Configs (Overrides `config_bucket_prefix` if provided). | `string` | `""` | no |
 | <a name="input_config_bucket_prefix"></a> [config\_bucket\_prefix](#input\_config\_bucket\_prefix) | The prefix to use for bucket that will hold the Configs. | `string` | `"tkd-reg-config"` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | The domain to use for this site. | `string` | n/a | yes |
@@ -63,6 +67,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_badges_bucket_name"></a> [badges\_bucket\_name](#output\_badges\_bucket\_name) | The name of the Badges S3 Bucket. |
+| <a name="output_certificate_arn"></a> [certificate\_arn](#output\_certificate\_arn) | The ARN for the ACM Cert |
 | <a name="output_config_bucket_name"></a> [config\_bucket\_name](#output\_config\_bucket\_name) | The name of the Config S3 Bucket. |
 | <a name="output_domain_name_servers"></a> [domain\_name\_servers](#output\_domain\_name\_servers) | The list of name servers for the domain. |
 | <a name="output_domain_zone_id"></a> [domain\_zone\_id](#output\_domain\_zone\_id) | The Zone ID for the domain |
