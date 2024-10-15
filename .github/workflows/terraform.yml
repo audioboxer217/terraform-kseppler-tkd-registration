@@ -9,6 +9,9 @@ permissions:
   id-token: write
   contents: read
 
+env:
+  TF_WORKSPACE: ${GITHUB_REF:-test}
+
 jobs:
   test:
     name: 'Terraform'
