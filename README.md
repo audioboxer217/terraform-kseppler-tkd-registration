@@ -13,7 +13,7 @@ This repo contains a module to standup the basic infrastructure used for the [gd
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.23.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.71.0 |
 
 ## Modules
 
@@ -25,6 +25,7 @@ No modules.
 |------|------|
 | [aws_acm_certificate.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate) | resource |
 | [aws_acm_certificate_validation.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation) | resource |
+| [aws_dynamodb_table.auth_table](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
 | [aws_dynamodb_table.registrations_table](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
 | [aws_route53_record.validation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_zone.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone) | resource |
@@ -51,6 +52,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_TFC_WORKSPACE_NAME"></a> [TFC\_WORKSPACE\_NAME](#input\_TFC\_WORKSPACE\_NAME) | The name of the workspace in Terraform Cloud where this is managed. | `string` | `""` | no |
 | <a name="input_admin_email"></a> [admin\_email](#input\_admin\_email) | The email to use for sending admin-related items. | `string` | n/a | yes |
+| <a name="input_auth_table_name"></a> [auth\_table\_name](#input\_auth\_table\_name) | The name to use for auth DynamoDB Table. | `string` | `"admin_auth_table"` | no |
 | <a name="input_aws_account_number"></a> [aws\_account\_number](#input\_aws\_account\_number) | The AWS Account where the resources will be created (uses 'current' data source when not provided). | `string` | `""` | no |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region where the resources will be created (uses 'current' data source when not provided). | `string` | `""` | no |
 | <a name="input_badges_bucket_name"></a> [badges\_bucket\_name](#input\_badges\_bucket\_name) | The name to use for bucket that will hold the Badges (Overrides `badges_bucket_prefix` if provided). | `string` | `""` | no |

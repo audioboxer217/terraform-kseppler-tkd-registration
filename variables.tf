@@ -114,6 +114,12 @@ variable "registration_table_name" {
   description = "The name to use for 'registrations' DynamoDB Table."
 }
 
+variable "auth_table_name" {
+  type        = string
+  description = "The name to use for auth DynamoDB Table."
+  default     = "admin_auth_table"
+}
+
 variable "profile_pics_bucket_name" {
   type        = string
   description = "The name to use for bucket that will hold the Profile Pics (Overrides `profile_pics_bucket_prefix` if provided)."
