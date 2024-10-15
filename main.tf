@@ -211,7 +211,8 @@ resource "aws_s3_object" "frontend_json" {
     CONFIG_BUCKET       = aws_s3_bucket.config_bucket.id
     PUBLIC_MEDIA_BUCKET = aws_s3_bucket.public_media_bucket.id
     SQS_QUEUE_URL       = aws_sqs_queue.processing_queue.url
-    DB_TABLE            = var.registration_table_name
+    REG_DB_TABLE        = var.registration_table_name
+    AUTH_DB_TABLE       = var.auth_table_name
     VISITOR_INFO_URL    = var.visitor_info_url
     VISITOR_INFO_TEXT   = var.visitor_info_text
   }))
