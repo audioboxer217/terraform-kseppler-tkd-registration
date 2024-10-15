@@ -22,3 +22,8 @@ output "domain_name_servers" {
   description = "The list of name servers for the domain."
   value       = aws_route53_zone.main.name_servers
 }
+
+output "domain_zone_id" {
+  description = "The Zone ID for the domain"
+  value       = aws_route53_zone.main.zone_id
+}
