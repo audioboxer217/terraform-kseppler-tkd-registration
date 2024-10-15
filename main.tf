@@ -195,20 +195,6 @@ resource "aws_s3_bucket_versioning" "public_media_bucket" {
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "public_media_bucket" {
-  bucket = aws_s3_bucket.public_media_bucket.id
-
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
-}
-
-resource "aws_s3_bucket_policy" "allow_public_access" {
-  bucket = aws_s3_bucket.public_media_bucket.id
-  policy = data.aws_iam_policy_document.allow_public_access.json
-}
-
 resource "aws_route53_zone" "main" {
   name = var.domain_name
   tags = local.common_tags
