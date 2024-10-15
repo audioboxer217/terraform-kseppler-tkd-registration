@@ -18,6 +18,11 @@ output "badges_bucket_name" {
   value       = aws_s3_bucket.badges_bucket.id
 }
 
+output "public_media_bucket_name" {
+  description = "The name of the Public Media S3 Bucket."
+  value       = aws_s3_bucket.public_media_bucket.id
+}
+
 output "domain_name_servers" {
   description = "The list of name servers for the domain."
   value       = aws_route53_zone.main.name_servers
