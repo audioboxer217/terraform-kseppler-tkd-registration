@@ -62,3 +62,8 @@ variable "config_bucket_prefix" {
   description = "The prefix to use for bucket that will hold the Configs."
   default     = "tkd-reg-config"
 }
+
+variable "domain_name" {
+  type        = string
+  description = "The domain to use for this site."
+}
