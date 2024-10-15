@@ -76,7 +76,7 @@ resource "aws_dynamodb_table" "registrations_table" {
     write_capacity     = 0
   }
   point_in_time_recovery {
-    enabled = false
+    enabled = true
   }
   ttl {
     attribute_name = ""
