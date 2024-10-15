@@ -14,6 +14,8 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: Test
+    env:
+      TF_WORKSPACE: ${{ vars.TF_WORKSPACE }}
 
     defaults:
       run:

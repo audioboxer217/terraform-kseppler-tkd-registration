@@ -76,7 +76,7 @@ resource "aws_dynamodb_table" "registrations_table" {
     write_capacity     = 0
   }
   point_in_time_recovery {
-    enabled = false
+    enabled = true
   }
   ttl {
     attribute_name = ""
@@ -193,20 +193,6 @@ resource "aws_s3_bucket_versioning" "public_media_bucket" {
   versioning_configuration {
     status = "Enabled"
   }
-}
-
-resource "aws_s3_bucket_public_access_block" "public_media_bucket" {
-  bucket = aws_s3_bucket.public_media_bucket.id
-
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
-}
-
-resource "aws_s3_bucket_policy" "allow_public_access" {
-  bucket = aws_s3_bucket.public_media_bucket.id
-  policy = data.aws_iam_policy_document.allow_public_access.json
 }
 
 resource "aws_route53_zone" "main" {
