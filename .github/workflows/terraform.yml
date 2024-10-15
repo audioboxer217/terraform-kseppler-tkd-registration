@@ -9,6 +9,9 @@ permissions:
   id-token: write
   contents: read
 
+env:
+  TF_WORKSPACE: ${vars.TF_WORKSPACE}
+
 jobs:
   test:
     name: 'Terraform'
