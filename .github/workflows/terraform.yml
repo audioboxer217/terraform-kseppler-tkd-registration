@@ -50,6 +50,7 @@ on:
   pull_request:
 
 permissions:
+  id-token: write
   contents: read
 
 jobs:
@@ -67,6 +68,13 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v4
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v3
+      with:
+        role-to-assume: GitHub_Actions
+        role-session-name: TerraformTest
+        aws-region: ${{ env.AWS_REGION }}
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
