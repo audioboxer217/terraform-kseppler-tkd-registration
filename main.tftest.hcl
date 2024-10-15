@@ -3,10 +3,21 @@ variables {
   domain_name                     = "test.reg.com"
   processing_queue_name           = "test_processing"
   failed_registrations_queue_name = "test_failed_registrations"
-  common_tags = {
-    "TF_Workspace" = "test_ws"
-    "Terraform"    = "true"
-  }
+  TFC_WORKSPACE_NAME              = "test"
+  email_send_server               = "smtp.gmail.com"
+  email_send_port                 = "465"
+  email_send_address              = "test@gmail.com"
+  email_send_password             = "p@ss1234"
+  competition_name                = "Test TKD"
+  competition_year                = "2000"
+  early_reg_date                  = "January 10, 2000"
+  reg_close_date                  = "February 10, 2000"
+  contact_email                   = "test@gmail.com"
+  admin_email                     = "admin@gmail.com"
+  visitor_info_url                = "visitCITY.com"
+  visitor_info_text               = "Things to do in CITY"
+  maps_api_key                    = "m@psK3y"
+  stripe_api_key                  = "$trip3ky"
 }
 
 run "validate_route53" {
