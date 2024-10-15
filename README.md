@@ -52,6 +52,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_TFC_WORKSPACE_NAME"></a> [TFC\_WORKSPACE\_NAME](#input\_TFC\_WORKSPACE\_NAME) | The name of the workspace in Terraform Cloud where this is managed. | `string` | `""` | no |
 | <a name="input_admin_email"></a> [admin\_email](#input\_admin\_email) | The email to use for sending admin-related items. | `string` | n/a | yes |
 | <a name="input_aws_account_number"></a> [aws\_account\_number](#input\_aws\_account\_number) | The AWS Account where the resources will be created (uses 'current' data source when not provided). | `string` | `""` | no |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region where the resources will be created (uses 'current' data source when not provided). | `string` | `""` | no |
@@ -66,7 +67,7 @@ No modules.
 | <a name="input_early_reg_date"></a> [early\_reg\_date](#input\_early\_reg\_date) | The date when Early Registration closes. | `string` | n/a | yes |
 | <a name="input_email_send_address"></a> [email\_send\_address](#input\_email\_send\_address) | The email address to use to send emails from. | `string` | n/a | yes |
 | <a name="input_email_send_password"></a> [email\_send\_password](#input\_email\_send\_password) | The password for the 'email\_send\_address'. | `string` | n/a | yes |
-| <a name="input_email_send_port"></a> [email\_send\_port](#input\_email\_send\_port) | The port for the email server to send emails from. | `string` | n/a | yes |
+| <a name="input_email_send_port"></a> [email\_send\_port](#input\_email\_send\_port) | The port for the email server to send emails from. | `string` | `"465"` | no |
 | <a name="input_email_send_server"></a> [email\_send\_server](#input\_email\_send\_server) | The email server to send emails from. | `string` | n/a | yes |
 | <a name="input_failed_registrations_queue_name"></a> [failed\_registrations\_queue\_name](#input\_failed\_registrations\_queue\_name) | The name to use for the 'failed' SQS Queue. | `string` | `"failed_registrations"` | no |
 | <a name="input_maps_api_key"></a> [maps\_api\_key](#input\_maps\_api\_key) | The API Key for Google Maps. | `string` | n/a | yes |
