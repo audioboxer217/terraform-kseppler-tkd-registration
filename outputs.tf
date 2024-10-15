@@ -32,3 +32,8 @@ output "domain_zone_id" {
   description = "The Zone ID for the domain"
   value       = aws_route53_zone.main.zone_id
 }
+
+output "certificate_arn" {
+  description = "The ARN for the ACM Cert"
+  value       = aws_acm_certificate.main.arn
+}
