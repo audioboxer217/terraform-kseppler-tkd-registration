@@ -222,6 +222,16 @@ resource "aws_s3_object" "frontend_json" {
   tags                   = local.common_tags
 }
 
+resource "aws_s3_object" "schools_json" {
+  bucket                 = aws_s3_bucket.config_bucket.id
+  key                    = "schools.json"
+  content                = jsonencode(var.schools)
+  content_type           = "application/json"
+  server_side_encryption = "AES256"
+  storage_class          = "STANDARD"
+  tags                   = local.common_tags
+}
+
 resource "aws_s3_bucket" "public_media_bucket" {
   bucket              = var.public_media_bucket_name == "" ? null : var.public_media_bucket_name
   bucket_prefix       = var.public_media_bucket_name != "" ? null : var.public_media_bucket_prefix

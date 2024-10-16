@@ -39,6 +39,7 @@ No modules.
 | [aws_s3_bucket_versioning.public_media_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_versioning) | resource |
 | [aws_s3_object.backend_json](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
 | [aws_s3_object.frontend_json](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
+| [aws_s3_object.schools_json](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
 | [aws_sqs_queue.failed_registrations_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 | [aws_sqs_queue.processing_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
@@ -77,6 +78,7 @@ No modules.
 | <a name="input_public_media_bucket_prefix"></a> [public\_media\_bucket\_prefix](#input\_public\_media\_bucket\_prefix) | The prefix to use for bucket that will hold the public media. | `string` | `"tkd-reg-public-media"` | no |
 | <a name="input_reg_close_date"></a> [reg\_close\_date](#input\_reg\_close\_date) | The date when Final Registration closes. | `string` | n/a | yes |
 | <a name="input_registration_table_name"></a> [registration\_table\_name](#input\_registration\_table\_name) | The name to use for 'registrations' DynamoDB Table. | `string` | n/a | yes |
+| <a name="input_schools"></a> [schools](#input\_schools) | Listing of all school options | `list(string)` | `[]` | no |
 | <a name="input_stripe_api_key"></a> [stripe\_api\_key](#input\_stripe\_api\_key) | The API Key for Stripe. | `string` | n/a | yes |
 | <a name="input_visitor_info_text"></a> [visitor\_info\_text](#input\_visitor\_info\_text) | Text to use for the visitor information link. | `string` | n/a | yes |
 | <a name="input_visitor_info_url"></a> [visitor\_info\_url](#input\_visitor\_info\_url) | URL to use for the visitor information link. | `string` | n/a | yes |

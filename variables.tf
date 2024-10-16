@@ -167,3 +167,9 @@ variable "public_media_bucket_prefix" {
   description = "The prefix to use for bucket that will hold the public media."
   default     = "tkd-reg-public-media"
 }
+
+variable "schools" {
+  type        = list(string)
+  description = "Listing of all school options"
+  default     = []
+}
