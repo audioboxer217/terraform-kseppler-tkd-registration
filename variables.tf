@@ -116,8 +116,14 @@ variable "registration_table_name" {
 
 variable "auth_table_name" {
   type        = string
-  description = "The name to use for auth DynamoDB Table."
+  description = "The name to use for the 'auth' DynamoDB Table."
   default     = "admin_auth_table"
+}
+
+variable "lookup_table_name" {
+  type        = string
+  description = "The name to use for the 'lookup' DynamoDB Table."
+  default     = "reg_lookup_table"
 }
 
 variable "profile_pics_bucket_name" {

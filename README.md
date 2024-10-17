@@ -26,6 +26,7 @@ No modules.
 | [aws_acm_certificate.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate) | resource |
 | [aws_acm_certificate_validation.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate_validation) | resource |
 | [aws_dynamodb_table.auth_table](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
+| [aws_dynamodb_table.lookup_table](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
 | [aws_dynamodb_table.registrations_table](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table) | resource |
 | [aws_route53_record.validation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_zone.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone) | resource |
@@ -53,7 +54,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_TFC_WORKSPACE_NAME"></a> [TFC\_WORKSPACE\_NAME](#input\_TFC\_WORKSPACE\_NAME) | The name of the workspace in Terraform Cloud where this is managed. | `string` | `""` | no |
 | <a name="input_admin_email"></a> [admin\_email](#input\_admin\_email) | The email to use for sending admin-related items. | `string` | n/a | yes |
-| <a name="input_auth_table_name"></a> [auth\_table\_name](#input\_auth\_table\_name) | The name to use for auth DynamoDB Table. | `string` | `"admin_auth_table"` | no |
+| <a name="input_auth_table_name"></a> [auth\_table\_name](#input\_auth\_table\_name) | The name to use for the 'auth' DynamoDB Table. | `string` | `"admin_auth_table"` | no |
 | <a name="input_aws_account_number"></a> [aws\_account\_number](#input\_aws\_account\_number) | The AWS Account where the resources will be created (uses 'current' data source when not provided). | `string` | `""` | no |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region where the resources will be created (uses 'current' data source when not provided). | `string` | `""` | no |
 | <a name="input_badges_bucket_name"></a> [badges\_bucket\_name](#input\_badges\_bucket\_name) | The name to use for bucket that will hold the Badges (Overrides `badges_bucket_prefix` if provided). | `string` | `""` | no |
@@ -70,6 +71,7 @@ No modules.
 | <a name="input_email_send_port"></a> [email\_send\_port](#input\_email\_send\_port) | The port for the email server to send emails from. | `string` | `"465"` | no |
 | <a name="input_email_send_server"></a> [email\_send\_server](#input\_email\_send\_server) | The email server to send emails from. | `string` | n/a | yes |
 | <a name="input_failed_registrations_queue_name"></a> [failed\_registrations\_queue\_name](#input\_failed\_registrations\_queue\_name) | The name to use for the 'failed' SQS Queue. | `string` | `"failed_registrations"` | no |
+| <a name="input_lookup_table_name"></a> [lookup\_table\_name](#input\_lookup\_table\_name) | The name to use for the 'lookup' DynamoDB Table. | `string` | `"reg_lookup_table"` | no |
 | <a name="input_maps_api_key"></a> [maps\_api\_key](#input\_maps\_api\_key) | The API Key for Google Maps. | `string` | n/a | yes |
 | <a name="input_processing_queue_name"></a> [processing\_queue\_name](#input\_processing\_queue\_name) | The name to use for the 'processing' SQS Queue. | `string` | `"processing"` | no |
 | <a name="input_profile_pics_bucket_name"></a> [profile\_pics\_bucket\_name](#input\_profile\_pics\_bucket\_name) | The name to use for bucket that will hold the Profile Pics (Overrides `profile_pics_bucket_prefix` if provided). | `string` | `""` | no |
