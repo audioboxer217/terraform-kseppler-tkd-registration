@@ -183,5 +183,30 @@ variable "public_media_bucket_prefix" {
 variable "schools" {
   type        = list(string)
   description = "Listing of all school options"
-  default     = []
+  default = [
+    "Earlywine Park YMCA",
+    "Farfan's TKD",
+    "Geomi",
+    "Golden Dragon TKD - Midtown",
+    "Golden Dragon TKD - Owasso",
+    "Golden Dragon TKD - Tulsa",
+    "Golden Tiger Martial Arts",
+    "Grand Master Sean Kim's TKD",
+    "Iron Horse TKD Academny",
+    "Jeong's TKD Martial Arts",
+    "Jido Kwon TKD",
+    "Legacy Taekwondo",
+    "Lee's Martial Arts Taekwondo Academy",
+    "Master Hong's Olympic TKD",
+    "Master Shin's Academy",
+    "Master Yoo's World Champion Taekwondo",
+    "MHCK World Class TKD",
+    "Off The Chain",
+    "Poos TKD",
+    "Tiger Jung's TKD",
+    "White Tiger TKD",
+    "White Tiger TKD - Rockwall",
+    "Yang's Martial Arts",
+    "Young Moo Taekwondo"
+  ]
 }
