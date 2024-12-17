@@ -144,6 +144,12 @@ variable "config_bucket_name" {
   default     = ""
 }
 
+variable "connect_account" {
+  type        = string
+  description = "The Connect Account ID from Stipe."
+  default     = ""
+}
+
 variable "public_media_bucket_name" {
   type        = string
   description = "The name to use for bucket that will hold the public media (Overrides `public_media_bucket_prefix` if provided)."

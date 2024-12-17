@@ -63,6 +63,7 @@ No modules.
 | <a name="input_competition_year"></a> [competition\_year](#input\_competition\_year) | The year of the competition. | `string` | n/a | yes |
 | <a name="input_config_bucket_name"></a> [config\_bucket\_name](#input\_config\_bucket\_name) | The name to use for bucket that will hold the Configs (Overrides `config_bucket_prefix` if provided). | `string` | `""` | no |
 | <a name="input_config_bucket_prefix"></a> [config\_bucket\_prefix](#input\_config\_bucket\_prefix) | The prefix to use for bucket that will hold the Configs. | `string` | `"tkd-reg-config"` | no |
+| <a name="input_connect_account"></a> [connect\_account](#input\_connect\_account) | The Connect Account ID from Stipe. | `string` | `""` | no |
 | <a name="input_contact_email"></a> [contact\_email](#input\_contact\_email) | The email to give to users as a contact. | `string` | n/a | yes |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | The domain to use for this site. | `string` | n/a | yes |
 | <a name="input_early_reg_date"></a> [early\_reg\_date](#input\_early\_reg\_date) | The date when Early Registration closes. | `string` | n/a | yes |

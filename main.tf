@@ -254,6 +254,7 @@ resource "aws_s3_object" "frontend_json" {
     SQS_QUEUE_URL       = aws_sqs_queue.processing_queue.url
     REG_DB_TABLE        = var.registration_table_name
     AUTH_DB_TABLE       = var.auth_table_name
+    CONNECT_ACCT        = var.connect_account
     VISITOR_INFO_URL    = var.visitor_info_url
     VISITOR_INFO_TEXT   = var.visitor_info_text
   }))
