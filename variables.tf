@@ -76,11 +76,19 @@ variable "admin_email" {
 variable "visitor_info_url" {
   type        = string
   description = "URL to use for the visitor information link."
+  default     = ""
 }
 
 variable "visitor_info_text" {
   type        = string
   description = "Text to use for the visitor information link."
+  default     = ""
+}
+
+variable "event_city" {
+  type        = string
+  description = "The city where the event is being held."
+  default     = ""
 }
 
 # API Details
