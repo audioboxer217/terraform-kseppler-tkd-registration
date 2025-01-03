@@ -13,7 +13,7 @@ This repo contains a module to standup the basic infrastructure used for the [gd
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.71.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.82.2 |
 
 ## Modules
 
@@ -71,6 +71,7 @@ No modules.
 | <a name="input_email_send_password"></a> [email\_send\_password](#input\_email\_send\_password) | The password for the 'email\_send\_address'. | `string` | n/a | yes |
 | <a name="input_email_send_port"></a> [email\_send\_port](#input\_email\_send\_port) | The port for the email server to send emails from. | `string` | `"465"` | no |
 | <a name="input_email_send_server"></a> [email\_send\_server](#input\_email\_send\_server) | The email server to send emails from. | `string` | n/a | yes |
+| <a name="input_event_city"></a> [event\_city](#input\_event\_city) | The city where the event is being held. | `string` | `""` | no |
 | <a name="input_failed_registrations_queue_name"></a> [failed\_registrations\_queue\_name](#input\_failed\_registrations\_queue\_name) | The name to use for the 'failed' SQS Queue. | `string` | `"failed_registrations"` | no |
 | <a name="input_lookup_table_name"></a> [lookup\_table\_name](#input\_lookup\_table\_name) | The name to use for the 'lookup' DynamoDB Table. | `string` | `"reg_lookup_table"` | no |
 | <a name="input_maps_api_key"></a> [maps\_api\_key](#input\_maps\_api\_key) | The API Key for Google Maps. | `string` | n/a | yes |
@@ -83,8 +84,8 @@ No modules.
 | <a name="input_registration_table_name"></a> [registration\_table\_name](#input\_registration\_table\_name) | The name to use for 'registrations' DynamoDB Table. | `string` | n/a | yes |
 | <a name="input_schools"></a> [schools](#input\_schools) | Listing of all school options | `list(string)` | <pre>[<br/>  "Earlywine Park YMCA",<br/>  "Farfan's TKD",<br/>  "Geomi",<br/>  "Golden Dragon TKD - Midtown",<br/>  "Golden Dragon TKD - Owasso",<br/>  "Golden Dragon TKD - Tulsa",<br/>  "Golden Tiger Martial Arts",<br/>  "Grand Master Sean Kim's TKD",<br/>  "Iron Horse TKD Academny",<br/>  "Jeong's TKD Martial Arts",<br/>  "Jido Kwon TKD",<br/>  "Legacy Taekwondo",<br/>  "Lee's Martial Arts Taekwondo Academy",<br/>  "Master Hong's Olympic TKD",<br/>  "Master Shin's Academy",<br/>  "Master Yoo's World Champion Taekwondo",<br/>  "MHCK World Class TKD",<br/>  "Off The Chain",<br/>  "Poos TKD",<br/>  "Tiger Jung's TKD",<br/>  "White Tiger TKD",<br/>  "White Tiger TKD - Rockwall",<br/>  "Yang's Martial Arts",<br/>  "Young Moo Taekwondo"<br/>]</pre> | no |
 | <a name="input_stripe_api_key"></a> [stripe\_api\_key](#input\_stripe\_api\_key) | The API Key for Stripe. | `string` | n/a | yes |
-| <a name="input_visitor_info_text"></a> [visitor\_info\_text](#input\_visitor\_info\_text) | Text to use for the visitor information link. | `string` | n/a | yes |
-| <a name="input_visitor_info_url"></a> [visitor\_info\_url](#input\_visitor\_info\_url) | URL to use for the visitor information link. | `string` | n/a | yes |
+| <a name="input_visitor_info_text"></a> [visitor\_info\_text](#input\_visitor\_info\_text) | Text to use for the visitor information link. | `string` | `""` | no |
+| <a name="input_visitor_info_url"></a> [visitor\_info\_url](#input\_visitor\_info\_url) | URL to use for the visitor information link. | `string` | `""` | no |
 
 ## Outputs
 

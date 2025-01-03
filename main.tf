@@ -257,6 +257,7 @@ resource "aws_s3_object" "frontend_json" {
     CONNECT_ACCT        = var.connect_account
     VISITOR_INFO_URL    = var.visitor_info_url
     VISITOR_INFO_TEXT   = var.visitor_info_text
+    EVENT_CITY          = var.event_city
   }))
   content_type           = "application/json"
   server_side_encryption = "AES256"
