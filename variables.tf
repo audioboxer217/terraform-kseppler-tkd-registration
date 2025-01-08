@@ -92,6 +92,12 @@ variable "event_city" {
 }
 
 # API Details
+variable "flask_secret_key" {
+  type        = string
+  sensitive   = true
+  description = "The secret key to use for Flask."
+  default     = null
+}
 variable "maps_api_key" {
   type        = string
   sensitive   = true

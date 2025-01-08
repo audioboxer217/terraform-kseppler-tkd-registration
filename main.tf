@@ -240,6 +240,7 @@ resource "aws_s3_object" "frontend_json" {
   bucket = aws_s3_bucket.config_bucket.id
   key    = "frontend.json"
   content = jsonencode(tomap({
+    FLASK_SECRET_KEY    = var.flask_secret_key
     MAPS_API_KEY        = var.maps_api_key
     STRIPE_API_KEY      = var.stripe_api_key
     REG_URL             = "https://${var.domain_name}"

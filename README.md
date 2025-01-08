@@ -73,6 +73,7 @@ No modules.
 | <a name="input_email_send_server"></a> [email\_send\_server](#input\_email\_send\_server) | The email server to send emails from. | `string` | n/a | yes |
 | <a name="input_event_city"></a> [event\_city](#input\_event\_city) | The city where the event is being held. | `string` | `""` | no |
 | <a name="input_failed_registrations_queue_name"></a> [failed\_registrations\_queue\_name](#input\_failed\_registrations\_queue\_name) | The name to use for the 'failed' SQS Queue. | `string` | `"failed_registrations"` | no |
+| <a name="input_flask_secret_key"></a> [flask\_secret\_key](#input\_flask\_secret\_key) | The secret key to use for Flask. | `string` | `null` | no |
 | <a name="input_lookup_table_name"></a> [lookup\_table\_name](#input\_lookup\_table\_name) | The name to use for the 'lookup' DynamoDB Table. | `string` | `"reg_lookup_table"` | no |
 | <a name="input_maps_api_key"></a> [maps\_api\_key](#input\_maps\_api\_key) | The API Key for Google Maps. | `string` | n/a | yes |
 | <a name="input_processing_queue_name"></a> [processing\_queue\_name](#input\_processing\_queue\_name) | The name to use for the 'processing' SQS Queue. | `string` | `"processing"` | no |
