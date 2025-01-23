@@ -262,7 +262,7 @@ resource "aws_s3_object" "frontend_json" {
     COGNITO_AUTHORITY_URL = aws_cognito_user_pool.admin_users.endpoint
     COGNITO_CLIENT_ID     = aws_cognito_user_pool_client.client.id
     COGNITO_CLIENT_SECRET = aws_cognito_user_pool_client.client.client_secret
-    COGNITO_AUTH_URL      = "https://${aws_cognito_user_pool.admin_users.domain}.auth.${var.aws_region}.amazoncognito.com"
+    COGNITO_AUTH_URL      = "https://${local.cognito_domain}.auth.${local.aws_region}.amazoncognito.com"
   }))
   content_type           = "application/json"
   server_side_encryption = "AES256"
@@ -393,7 +393,7 @@ resource "aws_cognito_user_pool" "admin_users" {
 }
 
 resource "aws_cognito_user_pool_domain" "main" {
-  domain       = coalesce(var.admin_user_pool_domain_name, aws_cognito_user_pool.admin_users.id)
+  domain       = local.cognito_domain
   user_pool_id = aws_cognito_user_pool.admin_users.id
 }
 
