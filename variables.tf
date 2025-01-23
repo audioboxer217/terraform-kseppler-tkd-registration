@@ -200,6 +200,12 @@ variable "admin_user_pool_name" {
   default     = "TKD Reg Admins"
 }
 
+variable "admin_user_pool_domain_name" {
+  type        = string
+  description = "value for the admin user pool domain name"
+  default     = null
+}
+
 variable "schools" {
   type        = list(string)
   description = "Listing of all school options"

@@ -392,6 +392,11 @@ resource "aws_cognito_user_pool" "admin_users" {
   }
 }
 
+resource "aws_cognito_user_pool_domain" "main" {
+  domain       = coalesce(var.admin_user_pool_domain_name, aws_cognito_user_pool.admin_users.id)
+  user_pool_id = aws_cognito_user_pool.admin_users.id
+}
+
 resource "aws_cognito_user_pool_client" "client" {
   name                                          = var.admin_user_pool_name
   user_pool_id                                  = aws_cognito_user_pool.admin_users.id
