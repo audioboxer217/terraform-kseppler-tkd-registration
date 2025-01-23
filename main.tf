@@ -260,7 +260,7 @@ resource "aws_s3_object" "frontend_json" {
     VISITOR_INFO_TEXT     = var.visitor_info_text
     EVENT_CITY            = var.event_city
     COGNITO_AUTHORITY_URL = aws_cognito_user_pool.admin_users.endpoint
-    COGNITO_CLIENT_ID     = aws_cognito_user_pool_client.client.client_id
+    COGNITO_CLIENT_ID     = aws_cognito_user_pool_client.client.id
     COGNITO_CLIENT_SECRET = aws_cognito_user_pool_client.client.client_secret
     COGNITO_AUTH_URL      = "https://${aws_cognito_user_pool.admin_users.domain}.auth.${var.aws_region}.amazoncognito.com"
   }))
