@@ -194,6 +194,12 @@ variable "public_media_bucket_prefix" {
   default     = "tkd-reg-public-media"
 }
 
+variable "admin_user_pool_name" {
+  type        = string
+  description = "value for the admin user pool name"
+  default     = "TKD Reg Admins"
+}
+
 variable "schools" {
   type        = list(string)
   description = "Listing of all school options"
