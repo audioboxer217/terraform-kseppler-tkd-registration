@@ -423,3 +423,10 @@ resource "aws_cognito_user_pool_client" "client" {
     refresh_token = "days"
   }
 }
+
+resource "aws_cognito_user_group" "admins" {
+  name         = "Admins"
+  user_pool_id = aws_cognito_user_pool.admin_users.id
+  description  = "Approved Admins"
+  precedence   = 1
+}
