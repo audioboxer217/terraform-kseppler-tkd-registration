@@ -409,7 +409,7 @@ resource "aws_cognito_user_pool_client" "client" {
   enable_propagate_additional_user_context_data = false
   enable_token_revocation                       = true
   explicit_auth_flows                           = ["ALLOW_REFRESH_TOKEN_AUTH", "ALLOW_USER_AUTH", "ALLOW_USER_SRP_AUTH"]
-  generate_secret                               = null
+  generate_secret                               = true
   id_token_validity                             = 60
   logout_urls                                   = ["http://localhost:5001/", "https://${var.domain_name}/"]
   prevent_user_existence_errors                 = "ENABLED"
