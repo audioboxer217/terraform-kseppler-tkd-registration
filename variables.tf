@@ -60,6 +60,11 @@ variable "early_reg_date" {
   description = "The date when Early Registration closes."
 }
 
+variable "late_reg_date" {
+  type        = string
+  description = "The date when Late Registration fee applies."
+}
+
 variable "reg_close_date" {
   type        = string
   description = "The date when Final Registration closes."

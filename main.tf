@@ -247,6 +247,7 @@ resource "aws_s3_object" "frontend_json" {
     COMPETITION_NAME      = var.competition_name
     COMPETITION_YEAR      = var.competition_year
     EARLY_REG_DATE        = var.early_reg_date
+    LATE_REG_DATE         = var.late_reg_date
     REG_CLOSE_DATE        = var.reg_close_date
     CONTACT_EMAIL         = var.contact_email
     PROFILE_PIC_BUCKET    = aws_s3_bucket.profile-pics_bucket.id
