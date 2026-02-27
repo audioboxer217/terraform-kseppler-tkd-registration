@@ -1,4 +1,27 @@
-mock_provider "aws" {}
+mock_provider "aws" {
+  mock_data "aws_iam_policy_document" {
+    defaults = {
+      json = "{}"
+    }
+  }
+  mock_resource "aws_cognito_user_pool" {
+    defaults = {
+      id = "us-east-1_mockPool1"
+    }
+  }
+  mock_resource "aws_acm_certificate" {
+    defaults = {
+      domain_validation_options = [
+        {
+          domain_name           = "test.reg.com"
+          resource_record_name  = "_mock.test.reg.com."
+          resource_record_type  = "CNAME"
+          resource_record_value = "_mock.acm.amazonaws.com."
+        }
+      ]
+    }
+  }
+}
 
 variables {
   config_bucket_prefix    = "test-config"
@@ -27,7 +50,8 @@ run "validate_config_files" {
     target = [
       aws_s3_bucket.config_bucket,
       aws_s3_object.frontend_json,
-      aws_s3_object.backend_json
+      aws_s3_object.backend_json,
+      aws_acm_certificate.main
     ]
   }
 
