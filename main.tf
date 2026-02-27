@@ -279,6 +279,10 @@ resource "aws_s3_object" "schools_json" {
   server_side_encryption = "AES256"
   storage_class          = "STANDARD"
   tags                   = local.common_tags
+
+  lifecycle {
+    ignore_changes = [content]
+  }
 }
 
 resource "aws_s3_bucket" "public_media_bucket" {
