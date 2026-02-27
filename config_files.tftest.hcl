@@ -9,6 +9,7 @@ variables {
   competition_name        = "Test TKD"
   competition_year        = "2000"
   early_reg_date          = "January 10, 2000"
+  late_reg_date           = "February 01, 2000"
   reg_close_date          = "February 10, 2000"
   contact_email           = "test@gmail.com"
   admin_email             = "admin@gmail.com"
