@@ -1,3 +1,5 @@
+mock_provider "aws" {}
+
 variables {
   config_bucket_prefix    = "test-config"
   registration_table_name = "test_reg_table"
